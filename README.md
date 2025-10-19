@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🌐 Mon Portfolio - Tom Marchal
 
-## Getting Started
+Bienvenue sur mon portfolio personnel !
+Ce projet a pour objectif de présenter mes compétences, mes projets et mes services en tant que développeur web freelance.
 
-First, run the development server:
+🚀 Stack utilisée
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Next.js 15 – Framework React moderne pour le front-end
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+TypeScript – Typage statique pour un code plus robuste
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+TailwindCSS – Pour un design moderne, responsive et rapide à mettre en place
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Lucide-react – Librairie d’icônes simple et élégante
 
-## Learn More
+Formspree – Gestion du formulaire de contact sans backend
 
-To learn more about Next.js, take a look at the following resources:
+✨ Fonctionnalités
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🎨 Dark/Light mode avec un switch dynamique
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🖼️ Présentation de mes projets avec images, tags et liens externes
 
-## Deploy on Vercel
+📩 Formulaire de contact fonctionnel avec Formspree (envoi sans rechargement de page)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+💼 Section services avec mise en avant des offres et possibilité de demander un devis
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📱 Responsive design (mobile-first)
+
+📸 Aperçu
+
+
+(Ajoute une capture d’écran de ton site une fois déployé)
+
+🔗 Liens
+
+🌍 Voir le portfolio en ligne
+
+🧑‍💻 Mon GitHub
+
+📧 Me contacter : ton.mail@example.com
