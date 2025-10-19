@@ -1,9 +1,9 @@
-🌐 Mon Portfolio - Tom Marchal
+🌐 **Mon Portfolio - Tom Marchal**
 
 Bienvenue sur mon portfolio personnel !
 Ce projet a pour objectif de présenter mes compétences, mes projets et mes services en tant que développeur web freelance.
 
-🚀 Stack utilisée
+🚀 **Stack utilisée**
 
 Next.js 15 – Framework React moderne pour le front-end
 
@@ -15,7 +15,7 @@ Lucide-react – Librairie d’icônes simple et élégante
 
 Formspree – Gestion du formulaire de contact sans backend
 
-✨ Fonctionnalités
+✨ **Fonctionnalités**
 
 🎨 Dark/Light mode avec un switch dynamique
 
@@ -26,16 +26,3 @@ Formspree – Gestion du formulaire de contact sans backend
 💼 Section services avec mise en avant des offres et possibilité de demander un devis
 
 📱 Responsive design (mobile-first)
-
-📸 Aperçu
-
-
-(Ajoute une capture d’écran de ton site une fois déployé)
-
-🔗 Liens
-
-🌍 Voir le portfolio en ligne
-
-🧑‍💻 Mon GitHub
-
-📧 Me contacter : ton.mail@example.com
