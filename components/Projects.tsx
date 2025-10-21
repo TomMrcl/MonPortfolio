@@ -14,7 +14,7 @@ export function Projects() {
     {
       title: 'Kasa - Plateforme de location immobilière',
       description: 'Application affichant des logements avec informations détaillées à partir d’un fichier JSON.',
-      image: '/kasaimg.webp',
+      image: '/Kasaimg.webp',
       tags: ['React', 'JSON', 'Composants dynamiques'],
       link: 'https://kasa-roan-beta.vercel.app/'
     },
