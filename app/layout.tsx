@@ -9,8 +9,11 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Mon Portfolio",
-  description: "Portfolio + Boutique",
+  title: "Tom Marchal - Développeur Web Freelance spécialisé en React",
+  description: "Développeur web freelance spécialisé en React. Je crée des sites modernes, rapides et sur mesure pour aider les entreprises à renforcer leur présence en ligne.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
