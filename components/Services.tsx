@@ -138,7 +138,7 @@ export function Services() {
             </div>
             <h3 className="text-2xl font-semibold text-foreground mb-2">Maintenance mensuelle</h3>
             <p className="text-purple-600 dark:text-purple-400 text-xl font-bold mb-2">
-              A partir de 20€ / mois
+              A partir de 15€ / mois
             </p>
             <p className="text-muted-foreground mb-6">
               Après le 1er mois offert, bénéficiez d’une maintenance continue pour garder votre site à jour et sécurisé.
