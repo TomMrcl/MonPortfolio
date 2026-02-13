@@ -4,7 +4,9 @@ import { useState } from "react";
 import { Send, Mail, MessageCircle, CheckCircle2 } from "lucide-react";
 
 export function Contact() {
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,7 +37,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-purple-50 to-background dark:from-purple-950/10 dark:to-background">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-purple-50 to-background dark:from-purple-950/10 dark:to-background"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto relative">
           <div className="text-center mb-16">
@@ -91,7 +96,10 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-foreground mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-foreground mb-2"
+                  >
                     Message *
                   </label>
                   <textarea
@@ -109,7 +117,10 @@ export function Contact() {
                   disabled={status === "sending"}
                   className="w-full bg-purple-600 dark:bg-purple-500 text-white px-8 py-4 rounded-lg hover:bg-purple-700 dark:hover:bg-purple-600 transition-all duration-300 hover:shadow-lg hover:shadow-purple-200 dark:hover:shadow-purple-900/50 flex items-center justify-center gap-2 group"
                 >
-                  <Send size={20} className="group-hover:translate-x-1 transition-transform" />
+                  <Send
+                    size={20}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                   {status === "sending" ? "Envoi..." : "Envoyer le message"}
                 </button>
 
@@ -126,11 +137,16 @@ export function Contact() {
               <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="bg-purple-100 dark:bg-purple-900/30 w-12 h-12 rounded-lg flex items-center justify-center">
-                    <Mail size={24} className="text-purple-600 dark:text-purple-400" />
+                    <Mail
+                      size={24}
+                      className="text-purple-600 dark:text-purple-400"
+                    />
                   </div>
                   <div>
                     <h3 className="text-lg text-foreground">Email</h3>
-                    <p className="text-muted-foreground">tomarchal02@gmail.com</p>
+                    <p className="text-muted-foreground">
+                      tomarchal02@gmail.com
+                    </p>
                   </div>
                 </div>
               </div>
@@ -138,11 +154,16 @@ export function Contact() {
               <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="bg-purple-100 dark:bg-purple-900/30 w-12 h-12 rounded-lg flex items-center justify-center">
-                    <MessageCircle size={24} className="text-purple-600 dark:text-purple-400" />
+                    <MessageCircle
+                      size={24}
+                      className="text-purple-600 dark:text-purple-400"
+                    />
                   </div>
                   <div>
                     <h3 className="text-lg text-foreground">Réponse rapide</h3>
-                    <p className="text-muted-foreground">Réponse sous 24h maximum</p>
+                    <p className="text-muted-foreground">
+                      Réponse sous 24h maximum
+                    </p>
                   </div>
                 </div>
               </div>
@@ -150,8 +171,9 @@ export function Contact() {
               <div className="bg-gradient-to-br from-purple-600 to-purple-700 dark:from-purple-700 dark:to-purple-800 rounded-xl p-8 text-white">
                 <h3 className="text-lg mb-4">Prêt à démarrer votre projet ?</h3>
                 <p className="text-purple-100 dark:text-purple-200 leading-relaxed">
-                  Que ce soit pour un site vitrine, une boutique en ligne ou une application sur mesure, 
-                  je suis là pour vous accompagner dans votre transformation digitale.
+                  Que ce soit pour un site vitrine, une boutique en ligne ou une
+                  application sur mesure, je suis là pour vous accompagner dans
+                  votre transformation digitale.
                 </p>
               </div>
             </div>
