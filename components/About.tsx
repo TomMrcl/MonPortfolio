@@ -6,7 +6,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-purple-50 to-background dark:from-purple-950/10 dark:to-background"
+      className="py-20 scroll-mt-16 bg-gradient-to-br from-purple-50 to-background dark:from-purple-950/10 dark:to-background"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">

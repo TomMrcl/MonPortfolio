@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 to-background dark:from-purple-950/20 dark:to-background"
+      className="min-h-screen pt-16 flex items-center justify-center bg-gradient-to-br from-purple-100 to-background dark:from-purple-950/20 dark:to-background"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
@@ -48,7 +48,7 @@ export function Hero() {
           {/* Abstract illustration */}
           <div className="mt-16 relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-300/20 to-pink-300/20 dark:from-purple-700/20 dark:to-pink-700/20 rounded-full blur-3xl"></div>
-            <div className="relative grid grid-cols-3 gap-4 max-w-md mx-auto">
+            <div className="relative grid grid-cols-3 gap-2 sm:gap-4 max-w-xs sm:max-w-md mx-auto">
               <div className="h-20 bg-gradient-to-br from-purple-200 to-purple-300 dark:from-purple-800 dark:to-purple-700 rounded-lg opacity-60"></div>
               <div className="h-24 bg-gradient-to-br from-purple-300 to-purple-400 dark:from-purple-700 dark:to-purple-600 rounded-lg opacity-80"></div>
               <div className="h-16 bg-gradient-to-br from-purple-200 to-purple-300 dark:from-purple-800 dark:to-purple-700 rounded-lg opacity-70"></div>

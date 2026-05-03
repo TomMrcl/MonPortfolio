@@ -39,7 +39,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-purple-50 to-background dark:from-purple-950/10 dark:to-background"
+      className="py-20 scroll-mt-16 bg-gradient-to-br from-purple-50 to-background dark:from-purple-950/10 dark:to-background"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto relative">
@@ -55,7 +55,7 @@ export function Contact() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Formulaire */}
             <div className="relative">
               {/* Badge de succès */}
@@ -76,7 +76,7 @@ export function Contact() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-purple-400 dark:focus:border-purple-500 focus:ring-2 focus:ring-purple-100 dark:focus:ring-purple-900/50 transition-colors text-black"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-purple-400 dark:focus:border-purple-500 focus:ring-2 focus:ring-purple-100 dark:focus:ring-purple-900/50 transition-colors text-foreground"
                     placeholder="Votre nom"
                   />
                 </div>
@@ -90,7 +90,7 @@ export function Contact() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-purple-400 dark:focus:border-purple-500 focus:ring-2 focus:ring-purple-100 dark:focus:ring-purple-900/50 transition-colors text-black"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-purple-400 dark:focus:border-purple-500 focus:ring-2 focus:ring-purple-100 dark:focus:ring-purple-900/50 transition-colors text-foreground"
                     placeholder="votre@email.com"
                   />
                 </div>
@@ -107,7 +107,7 @@ export function Contact() {
                     name="message"
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-purple-400 dark:focus:border-purple-500 focus:ring-2 focus:ring-purple-100 dark:focus:ring-purple-900/50 transition-colors resize-none text-black"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-purple-400 dark:focus:border-purple-500 focus:ring-2 focus:ring-purple-100 dark:focus:ring-purple-900/50 transition-colors resize-none text-foreground"
                     placeholder="Décrivez votre projet..."
                   />
                 </div>

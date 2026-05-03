@@ -69,7 +69,7 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-20 scroll-mt-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre */}
         <div className="text-center mb-16">
@@ -83,13 +83,13 @@ export function Services() {
         </div>
 
         {/* 3 offres principales */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {services.map((service, index) => (
             <div
               key={index}
-              className={`relative bg-card border rounded-xl p-8 transition-all duration-300 flex justify-between flex-col ${
+              className={`relative bg-card border rounded-xl p-6 lg:p-8 transition-all duration-300 flex justify-between flex-col ${
                 service.highlight
-                  ? "border-purple-500 shadow-xl scale-105 z-10"
+                  ? "border-purple-500 shadow-xl lg:scale-105 lg:z-10"
                   : "border-border hover:shadow-lg dark:hover:shadow-purple-900/20 hover:-translate-y-1"
               }`}
             >
