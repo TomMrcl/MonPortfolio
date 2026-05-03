@@ -1,5 +1,4 @@
-"use client";
-
+import Image from "next/image";
 import { ExternalLink, ArrowRight } from "lucide-react";
 
 export function Projects() {
@@ -7,7 +6,7 @@ export function Projects() {
     {
       title: "Qwenta - Menu Maker",
       description:
-        "Planification d’un site web complet avec spécifications techniques et gestion de projet.",
+        "Planification d'un site web complet avec spécifications techniques et gestion de projet.",
       image: "/qwentaimg.webp",
       tags: ["Gestion de projet", "Spécifications", "UX/UI"],
       link: "https://github.com/TomMrcl/Qwenta",
@@ -15,7 +14,7 @@ export function Projects() {
     {
       title: "Kasa - Plateforme de location immobilière",
       description:
-        "Application affichant des logements avec informations détaillées à partir d’un fichier JSON.",
+        "Application affichant des logements avec informations détaillées à partir d'un fichier JSON.",
       image: "/Kasaimg.webp",
       tags: ["React", "JSON", "Composants dynamiques"],
       link: "https://kasa-roan-beta.vercel.app/",
@@ -31,7 +30,7 @@ export function Projects() {
     {
       title: "ohmyfood - Restauration",
       description:
-        "Site “mobile first” qui répertorie les menus de restaurants gastronomiques.",
+        'Site "mobile first" qui répertorie les menus de restaurants gastronomiques.',
       image: "/shémaomf.webp",
       tags: ["Responsive", "Animations", "Mobile first"],
       link: "https://tommrcl.github.io/ohmyfood/",
@@ -57,13 +56,15 @@ export function Projects() {
               key={index}
               className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl dark:hover:shadow-purple-900/20 transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="relative overflow-hidden">
-                <img
+              <div className="relative overflow-hidden h-64">
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
               <div className="p-6">
@@ -86,7 +87,6 @@ export function Projects() {
                   ))}
                 </div>
 
-                {/* Bouton vers le projet */}
                 <a
                   href={project.link}
                   target="_blank"
@@ -104,7 +104,6 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Bouton global vers ton GitHub */}
         <div className="text-center mt-12">
           <a
             href="https://github.com/TomMrcl"

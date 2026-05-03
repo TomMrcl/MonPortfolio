@@ -4,61 +4,44 @@ import { useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
+const navLinks = [
+  { label: "Accueil", href: "#hero" },
+  { label: "Mes projets", href: "#projects" },
+  { label: "Mes services", href: "#services" },
+  { label: "Contact", href: "#contact" },
+];
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMenuOpen(false);
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div
-            className="text-lg font-medium text-foreground cursor-pointer hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-            onClick={() => scrollToSection("hero")}
+          <a
+            href="#hero"
+            className="text-lg font-medium text-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
           >
             Tom Marchal
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("hero")}
-              className="text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-            >
-              Accueil
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-            >
-              Mes projets
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-            >
-              Mes services
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-            >
-              Contact
-            </button>
+            {navLinks.map(({ label, href }) => (
+              <a
+                key={href}
+                href={href}
+                className="text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+              >
+                {label}
+              </a>
+            ))}
 
-            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-secondary hover:bg-accent transition-colors"
-              aria-label="Toggle theme"
+              aria-label="Basculer le thème"
             >
               {theme === "dark" ? (
                 <Sun size={20} className="text-foreground" />
@@ -73,7 +56,7 @@ export function Header() {
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-secondary hover:bg-accent transition-colors"
-              aria-label="Toggle theme"
+              aria-label="Basculer le thème"
             >
               {theme === "dark" ? (
                 <Sun size={20} className="text-foreground" />
@@ -84,6 +67,8 @@ export function Header() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+              aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -92,33 +77,18 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
+          <nav className="md:hidden py-4 border-t border-border" aria-label="Menu mobile">
             <div className="flex flex-col space-y-3">
-              <button
-                onClick={() => scrollToSection("hero")}
-                className="text-left text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-2"
-              >
-                Accueil
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="text-left text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-2"
-              >
-                Mes projets
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="text-left text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-2"
-              >
-                Mes services
-              </button>
-
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-left text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-2"
-              >
-                Contact
-              </button>
+              {navLinks.map(({ label, href }) => (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-2"
+                >
+                  {label}
+                </a>
+              ))}
             </div>
           </nav>
         )}

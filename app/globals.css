@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
 /* Style global par défaut */
 body {
   @apply bg-white text-neutral-900 font-sans; 

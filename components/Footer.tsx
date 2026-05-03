@@ -1,6 +1,11 @@
-"use client";
+import { Github, Linkedin, Instagram } from "lucide-react";
 
-import { Github, Linkedin, Instagram, Heart } from "lucide-react";
+const navLinks = [
+  { label: "Accueil", href: "#hero" },
+  { label: "Mes services", href: "#services" },
+  { label: "Mes projets", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,48 +27,20 @@ export function Footer() {
             {/* Liens rapides */}
             <div>
               <h3 className="text-lg text-white mb-4">Liens rapides</h3>
-              <div className="space-y-2">
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("hero")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="block text-gray-400 hover:text-purple-400 transition-colors"
-                >
-                  Accueil
-                </button>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("services")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="block text-gray-400 hover:text-purple-400 transition-colors"
-                >
-                  Mes services
-                </button>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("projects")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="block text-gray-400 hover:text-purple-400 transition-colors"
-                >
-                  Mes projets
-                </button>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="block text-gray-400 hover:text-purple-400 transition-colors"
-                >
-                  Contact
-                </button>
-              </div>
+              <nav aria-label="Liens rapides">
+                <ul className="space-y-2">
+                  {navLinks.map(({ label, href }) => (
+                    <li key={href}>
+                      <a
+                        href={href}
+                        className="text-gray-400 hover:text-purple-400 transition-colors"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
 
             {/* Réseaux sociaux */}
@@ -74,6 +51,7 @@ export function Footer() {
                   href="https://www.linkedin.com/in/tom-marchal-a41b5b299/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-purple-400 hover:bg-gray-700 transition-all"
                 >
                   <Linkedin size={20} />
@@ -82,6 +60,7 @@ export function Footer() {
                   href="https://github.com/TomMrcl"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-purple-400 hover:bg-gray-700 transition-all"
                 >
                   <Github size={20} />
@@ -90,6 +69,7 @@ export function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Instagram"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-purple-400 hover:bg-gray-700 transition-all"
                 >
                   <Instagram size={20} />
@@ -98,13 +78,10 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Séparateur */}
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <div className="flex flex-col sm:flex-row justify-between items-center">
-              <p className="text-gray-400 flex items-center gap-2">
-                © {currentYear} Tom Marchal. Tous droits réservés.
-              </p>
-            </div>
+            <p className="text-gray-400">
+              © {currentYear} Tom Marchal. Tous droits réservés.
+            </p>
           </div>
         </div>
       </div>
