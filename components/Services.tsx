@@ -24,8 +24,8 @@ export function Services() {
     {
       icon: ShoppingCart,
       title: "Visibilité Google",
-      price: "À partir de 249€",
-      payment: "Ou 2x 125€ sans frais",
+      price: "À partir de 299€",
+      payment: "Ou 2x 150€ sans frais",
       description:
         "Optimisez votre présence sur Google pour apparaître en premier dans votre ville.",
       features: [
@@ -176,7 +176,7 @@ export function Services() {
               Maintenance mensuelle
             </h3>
             <p className="text-purple-600 dark:text-purple-400 text-xl font-bold mb-2">
-              A partir de 29€ / mois
+              A partir de 25€ / mois
             </p>
             <p className="text-muted-foreground mb-6">
               Après le 1er mois offert, bénéficiez d’une maintenance continue
