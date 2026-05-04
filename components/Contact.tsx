@@ -35,10 +35,10 @@ export function Contact() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const res = await fetch("https://formspree.io/f/mgvnqaqg", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         body: JSON.stringify(data),
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" },
       });
 
       if (res.ok) {
