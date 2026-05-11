@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  country   String?
+  device    String?
+  createdAt DateTime @default(now())
+}
+
+model Quote {
+  id        String   @id @default(cuid())
+  client    String
+  email     String
+  phone     String?
+  project   String
+  services  String[]
+  prices        Json     @default("{}")
+  discountType  String   @default("€")
+  discountValue Float    @default(0)
+  amount        Float
+  status    String   @default("draft")
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
