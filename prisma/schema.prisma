@@ -30,4 +30,43 @@ model Quote {
   notes     String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  invoices  Invoice[]
+}
+
+model Invoice {
+  id        String    @id @default(cuid())
+  number    String    @unique
+  client    String
+  email     String
+  phone     String?
+  project   String
+  services  String[]
+  prices    Json      @default("{}")
+  amount    Float
+  status    String    @default("pending")
+  quoteId   String?
+  quote     Quote?    @relation(fields: [quoteId], references: [id])
+  notes     String?
+  dueDate   DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Project {
+  id          String    @id @default(cuid())
+  name        String
+  client      String
+  description String?
+  status      String    @default("incoming")
+  progress    Int       @default(0)
+  quoteId     String?
+  invoiceId   String?
+  quoteStatus String?
+  paid        Boolean   @default(false)
+  maintenance Boolean   @default(false)
+  startDate   DateTime?
+  endDate     DateTime?
+  notes       String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
