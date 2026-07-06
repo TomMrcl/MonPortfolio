@@ -13,22 +13,26 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen pt-16 flex items-center justify-center bg-gradient-to-br from-purple-100 to-background dark:from-purple-950/20 dark:to-background"
+      className="min-h-screen pt-16 flex items-center justify-center"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
+          <p className="font-mono text-sm tracking-widest text-purple-600 dark:text-purple-400 mb-4">
+            // PORTFOLIO
+          </p>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-white mb-6 leading-tight">
             Développeur web{" "}
             <span className="text-purple-600 dark:text-purple-400">
               freelance
             </span>
             <br />
-            <span className="text-2xl sm:text-3xl lg:text-4xl text-foreground/80">
+            <span className="text-2xl sm:text-3xl lg:text-4xl text-zinc-900/80 dark:text-white/80">
               je crée des sites modernes, rapides et sur mesure.
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl mx-auto">
             Spécialisé en React et technologies modernes, j'aide les entreprises
             à développer leur présence digitale avec des solutions performantes
             et élégantes.

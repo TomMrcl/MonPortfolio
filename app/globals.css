@@ -9,10 +9,10 @@ html {
 
 /* Style global par défaut */
 body {
-  @apply bg-white text-neutral-900 font-sans; 
+  @apply bg-white text-zinc-900 font-sans;
 }
 
 /* Style en mode sombre */
 .dark body {
-  @apply bg-neutral-900 text-neutral-100;
+  @apply bg-zinc-950 text-zinc-100;
 }

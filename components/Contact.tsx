@@ -13,9 +13,9 @@ type FormData = {
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
 
 const inputBase =
-  "w-full px-4 py-3 bg-background border rounded-lg focus:outline-none focus:ring-2 transition-colors text-foreground";
+  "w-full px-4 py-3 bg-white dark:bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 transition-colors text-zinc-900 dark:text-white";
 const inputOk =
-  "border-border focus:border-purple-400 dark:focus:border-purple-500 focus:ring-purple-100 dark:focus:ring-purple-900/50";
+  "border-zinc-300 dark:border-white/10 focus:border-purple-400 dark:focus:border-purple-500 focus:ring-purple-100 dark:focus:ring-purple-900/50";
 const inputErr =
   "border-red-400 dark:border-red-500 focus:border-red-400 focus:ring-red-100 dark:focus:ring-red-900/50";
 
@@ -56,18 +56,21 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 scroll-mt-16 bg-gradient-to-br from-purple-50 to-background dark:from-purple-950/10 dark:to-background"
+      className="py-20 scroll-mt-16"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto relative">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl text-foreground mb-4">
+          <div className="mb-16 max-w-3xl">
+            <p className="font-mono text-sm tracking-widest text-purple-600 dark:text-purple-400 mb-3">
+              // CONTACT
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
               Contact
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-zinc-600 dark:text-zinc-400">
               Besoin d'un site ou d'une refonte ? Contactez-moi !
             </p>
-            <p className="text-muted-foreground mt-2">
+            <p className="text-zinc-600 dark:text-zinc-400 mt-2">
               Je réponds généralement dans les 24h.
             </p>
           </div>
@@ -85,7 +88,7 @@ export function Contact() {
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
                 {/* Nom */}
                 <div>
-                  <label htmlFor="name" className="block text-foreground mb-2">
+                  <label htmlFor="name" className="block text-zinc-900 dark:text-white mb-2">
                     Nom *
                   </label>
                   <input
@@ -108,7 +111,7 @@ export function Contact() {
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-foreground mb-2">
+                  <label htmlFor="email" className="block text-zinc-900 dark:text-white mb-2">
                     Email *
                   </label>
                   <input
@@ -133,7 +136,7 @@ export function Contact() {
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-foreground mb-2">
+                  <label htmlFor="message" className="block text-zinc-900 dark:text-white mb-2">
                     Message *
                   </label>
                   <textarea
@@ -176,32 +179,32 @@ export function Contact() {
 
             {/* Infos de contact */}
             <div className="space-y-8">
-              <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+              <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-8 shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="bg-purple-100 dark:bg-purple-900/30 w-12 h-12 rounded-lg flex items-center justify-center">
                     <Mail size={24} className="text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg text-foreground">Email</h3>
-                    <p className="text-muted-foreground">tomarchal02@gmail.com</p>
+                    <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">Email</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400">tomarchal02@gmail.com</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+              <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-8 shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="bg-purple-100 dark:bg-purple-900/30 w-12 h-12 rounded-lg flex items-center justify-center">
                     <MessageCircle size={24} className="text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg text-foreground">Réponse rapide</h3>
-                    <p className="text-muted-foreground">Réponse sous 24h maximum</p>
+                    <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">Réponse rapide</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400">Réponse sous 24h maximum</p>
                   </div>
                 </div>
               </div>
 
               <div className="bg-gradient-to-br from-purple-600 to-purple-700 dark:from-purple-700 dark:to-purple-800 rounded-xl p-8 text-white">
-                <h3 className="text-lg mb-4">Prêt à démarrer votre projet ?</h3>
+                <h3 className="text-lg font-semibold mb-4">Prêt à démarrer votre projet ?</h3>
                 <p className="text-purple-100 dark:text-purple-200 leading-relaxed">
                   Que ce soit pour un site vitrine, une boutique en ligne ou une
                   application sur mesure, je suis là pour vous accompagner dans
