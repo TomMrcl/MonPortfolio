@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Projects() {
   const projects = [
@@ -114,18 +114,6 @@ export function Projects() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <a
-            href="https://github.com/TomMrcl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-purple-600 dark:bg-purple-500 text-white px-8 py-4 rounded-lg hover:bg-purple-700 dark:hover:bg-purple-600 transition-all duration-300 hover:shadow-lg hover:shadow-purple-200 dark:hover:shadow-purple-900/50"
-          >
-            <ExternalLink size={20} />
-            Voir tous mes projets
-          </a>
         </div>
       </div>
     </section>

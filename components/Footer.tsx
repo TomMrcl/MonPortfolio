@@ -2,8 +2,9 @@ import { Github, Linkedin, Instagram } from "lucide-react";
 
 const navLinks = [
   { label: "Accueil", href: "#hero" },
-  { label: "Mes services", href: "#services" },
   { label: "Mes projets", href: "#projects" },
+  { label: "Avis", href: "#testimonials" },
+  { label: "Mes services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -18,10 +19,17 @@ export function Footer() {
             {/* Logo et description */}
             <div>
               <div className="text-xl text-white mb-4">Tom Marchal</div>
-              <p className="text-zinc-400 leading-relaxed">
+              <p className="text-zinc-400 leading-relaxed mb-4">
                 Développeur web freelance spécialisé en React. Créateur de sites
                 modernes et performants.
               </p>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-zinc-400">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                </span>
+                Disponible pour un nouveau projet
+              </span>
             </div>
 
             {/* Liens rapides */}

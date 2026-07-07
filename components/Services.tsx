@@ -11,7 +11,6 @@ import {
   ShieldCheck,
   Wrench,
   Star,
-  Check,
   CalendarDays,
   Wallet,
 } from "lucide-react";
@@ -43,7 +42,7 @@ export function Services() {
     {
       icon: ShoppingCart,
       title: "Visibilité Google",
-      price: "À partir de 299€",
+      price: "À partir de 199€",
       description:
         "Optimisez votre présence sur Google pour apparaître en premier dans votre ville.",
       features: [
@@ -326,63 +325,6 @@ export function Services() {
             </div>
           </div>
         )}
-
-        {/* Encart comparatif — 2 points de comparaison, compacts */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <div className="bg-purple-50 dark:bg-purple-950 border border-purple-200 dark:border-purple-700 rounded-xl p-6 shadow-lg">
-
-            {/* Titre fixe */}
-            <p className="text-center text-purple-600/70 dark:text-purple-300/70 text-xs uppercase tracking-widest font-medium mb-5">
-              Pourquoi choisir un site sur mesure ?
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              {/* Comparateur 1 — vs Solution clé en main */}
-              <div className="bg-white/70 dark:bg-white/5 border border-purple-200/60 dark:border-white/5 rounded-lg p-4">
-                <p className="text-center text-xs uppercase tracking-widest font-medium text-purple-600/70 dark:text-purple-300/70 mb-4">
-                  vs Solution clé en main
-                </p>
-
-                <div className="flex items-center justify-between text-sm mb-1">
-                  <span className="font-bold text-zinc-900 dark:text-white">Moi</span>
-                  <span className="font-bold text-zinc-900 dark:text-white">Adapté à votre projet</span>
-                </div>
-                <div className="flex items-center justify-between text-sm text-zinc-400 dark:text-purple-400/60 pb-3 mb-3 border-b border-purple-200/60 dark:border-purple-800/50">
-                  <span>Le marché</span>
-                  <span>+15% et ça continue</span>
-                </div>
-                <div className="flex items-center justify-between rounded-md bg-purple-100 dark:bg-purple-800/30 px-3 py-2">
-                  <span className="text-sm font-bold text-zinc-900 dark:text-white">Propriétaire</span>
-                  <span className="inline-flex items-center gap-1 text-sm font-bold text-green-600 dark:text-green-400">
-                    <Check size={14} /> Oui
-                  </span>
-                </div>
-              </div>
-
-              {/* Comparateur 2 — vs Agence web classique */}
-              <div className="bg-white/70 dark:bg-white/5 border border-purple-200/60 dark:border-white/5 rounded-lg p-4">
-                <p className="text-center text-xs uppercase tracking-widest font-medium text-purple-600/70 dark:text-purple-300/70 mb-4">
-                  vs Agence web classique
-                </p>
-
-                <div className="flex items-center justify-between text-sm mb-1">
-                  <span className="font-bold text-zinc-900 dark:text-white">Moi</span>
-                  <span className="font-bold text-zinc-900 dark:text-white">Sur devis, transparent</span>
-                </div>
-                <div className="flex items-center justify-between text-sm text-zinc-400 dark:text-purple-400/60 pb-3 mb-3 border-b border-purple-200/60 dark:border-purple-800/50">
-                  <span>Le marché</span>
-                  <span>+60% en moyenne</span>
-                </div>
-                <div className="flex items-center justify-between rounded-md bg-purple-100 dark:bg-purple-800/30 px-3 py-2">
-                  <span className="text-sm font-bold text-zinc-900 dark:text-white">Contact direct</span>
-                  <span className="inline-flex items-center gap-1 text-sm font-bold text-green-600 dark:text-green-400">
-                    <Check size={14} /> Oui
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Carte Maintenance */}
         <div className="max-w-3xl mx-auto">

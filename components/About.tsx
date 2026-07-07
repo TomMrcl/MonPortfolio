@@ -55,13 +55,13 @@ export function About() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-4 shadow-sm">
                   <div className="text-2xl text-purple-600 dark:text-purple-400 mb-2">
-                    15+
+                    30+
                   </div>
                   <div className="text-zinc-600 dark:text-zinc-400">Projets réalisés</div>
                 </div>
                 <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-4 shadow-sm">
                   <div className="text-2xl text-purple-600 dark:text-purple-400 mb-2">
-                    2+
+                    3+
                   </div>
                   <div className="text-zinc-600 dark:text-zinc-400">
                     Années d'expérience

@@ -7,6 +7,7 @@ import { useTheme } from "./ThemeProvider";
 const navLinks = [
   { label: "Accueil", href: "#hero" },
   { label: "Mes projets", href: "#projects" },
+  { label: "Avis", href: "#testimonials" },
   { label: "Mes services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
@@ -19,12 +20,21 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm border-b border-zinc-200 dark:border-white/10 z-50 transition-colors">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a
-            href="#hero"
-            className="text-lg font-medium text-zinc-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-          >
-            Tom Marchal
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="#hero"
+              className="text-lg font-medium text-zinc-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            >
+              Tom Marchal
+            </a>
+            <span className="hidden lg:inline-flex items-center gap-2 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 px-3 py-1 font-mono text-xs text-zinc-600 dark:text-zinc-400">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+              </span>
+              Disponible pour un nouveau projet
+            </span>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
