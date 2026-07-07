@@ -18,8 +18,21 @@ import {
 
 type PaymentMode = "unique" | "monthly";
 
+// Paliers de prix mini du marché freelance FR — servent de base au simulateur
+const projectTypes = [
+  { id: "landing", label: "Landing page (1 page)", price: 499 },
+  { id: "vitrine5", label: "Site vitrine (jusqu'à 5 pages)", price: 799 },
+  { id: "vitrine10", label: "Site vitrine (jusqu'à 10 pages)", price: 1499 },
+  { id: "ecommerce", label: "E-commerce / boutique en ligne", price: 1999 },
+];
+
 export function Services() {
   const [paymentMode, setPaymentMode] = useState<PaymentMode>("unique");
+  const [months, setMonths] = useState(12);
+  const [selectedType, setSelectedType] = useState(projectTypes[1].id);
+
+  const selectedProject =
+    projectTypes.find((type) => type.id === selectedType) ?? projectTypes[1];
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -31,11 +44,6 @@ export function Services() {
       icon: ShoppingCart,
       title: "Visibilité Google",
       price: "À partir de 299€",
-      monthly: {
-        price: "25€/mois",
-        duration: "pendant 12 mois",
-        after: "puis 25€/mois maintenance",
-      },
       description:
         "Optimisez votre présence sur Google pour apparaître en premier dans votre ville.",
       features: [
@@ -48,12 +56,7 @@ export function Services() {
     {
       icon: Monitor,
       title: "Site Web Professionnel",
-      price: "À partir de 899€",
-      monthly: {
-        price: "60€/mois",
-        duration: "pendant 15 mois",
-        after: "puis 25€/mois maintenance",
-      },
+      price: "À partir de 499€",
       description:
         "Site web professionnel pour présenter votre activité et attirer de nouveaux clients.",
       features: [
@@ -67,11 +70,6 @@ export function Services() {
       icon: Code,
       title: "Application Web Sur Mesure",
       price: "Sur devis",
-      monthly: {
-        price: "Mensualités adaptées",
-        duration: "à votre projet",
-        after: null,
-      },
       description:
         "Développement full-stack (React, Node.js, SQL) pour des projets ambitieux : espace client, système de réservation, tableau de bord, base de données.",
       features: [
@@ -152,48 +150,40 @@ export function Services() {
           </p>
         </div>
 
-        {/* 3 offres principales */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`relative bg-white dark:bg-zinc-900 border rounded-xl p-6 lg:p-8 shadow-sm transition-all duration-300 flex justify-between flex-col ${
-                service.highlight
-                  ? "border-purple-500 shadow-xl lg:scale-105 lg:z-10"
-                  : "border-zinc-200 dark:border-white/10 hover:shadow-lg dark:hover:shadow-purple-900/20 hover:-translate-y-1"
-              }`}
-            >
-              {/* Badge Populaire */}
-              {service.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-sm font-medium px-8 py-1 rounded-full flex items-center gap-2 shadow-md">
-                  <Star size={14} className="text-yellow-300" />
-                  Populaire
-                </div>
-              )}
-
-              {/* Icône */}
+        {/* Offre(s) — 3 cartes en paiement unique, simulateur en mensuel */}
+        {paymentMode === "unique" ? (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+            {services.map((service, index) => (
               <div
-                className={`w-16 h-16 rounded-lg flex items-center justify-center mb-6 ${
+                key={index}
+                className={`relative bg-white dark:bg-zinc-900 border rounded-xl p-6 lg:p-8 shadow-sm transition-all duration-300 flex justify-between flex-col ${
                   service.highlight
-                    ? "bg-purple-600 text-white"
-                    : "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"
+                    ? "border-purple-500 shadow-xl lg:scale-105 lg:z-10"
+                    : "border-zinc-200 dark:border-white/10 hover:shadow-lg dark:hover:shadow-purple-900/20 hover:-translate-y-1"
                 }`}
               >
-                <service.icon size={28} />
-              </div>
+                {/* Badge Populaire */}
+                {service.highlight && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-sm font-medium px-8 py-1 rounded-full flex items-center gap-2 shadow-md">
+                    <Star size={14} className="text-yellow-300" />
+                    Populaire
+                  </div>
+                )}
 
-              <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-2">{service.title}</h3>
-
-              {/* Bloc prix — crossfade entre les deux modes */}
-              <div className="mb-4 relative min-h-[80px]">
-                {/* Mode paiement unique */}
+                {/* Icône */}
                 <div
-                  className={`transition-opacity duration-300 ${
-                    paymentMode === "unique"
-                      ? "opacity-100"
-                      : "opacity-0 absolute inset-0 pointer-events-none"
+                  className={`w-16 h-16 rounded-lg flex items-center justify-center mb-6 ${
+                    service.highlight
+                      ? "bg-purple-600 text-white"
+                      : "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"
                   }`}
                 >
+                  <service.icon size={28} />
+                </div>
+
+                <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-2">{service.title}</h3>
+
+                <div className="mb-4">
                   <div
                     className={`text-2xl font-bold ${
                       service.highlight
@@ -209,74 +199,133 @@ export function Services() {
                   </div>
                 </div>
 
-                {/* Mode mensuel */}
-                <div
-                  className={`transition-opacity duration-300 ${
-                    paymentMode === "monthly"
-                      ? "opacity-100"
-                      : "opacity-0 absolute inset-0 pointer-events-none"
+                <p className="text-zinc-600 dark:text-zinc-400 mb-6">{service.description}</p>
+
+                <ul className="space-y-2 mb-8">
+                  {service.features.map((feature, featureIndex) => (
+                    <li
+                      key={featureIndex}
+                      className={`flex items-center ${
+                        feature.includes("maintenance")
+                          ? "font-medium text-purple-600 dark:text-purple-400"
+                          : "text-zinc-600 dark:text-zinc-400"
+                      }`}
+                    >
+                      <div className="w-1.5 h-1.5 bg-purple-400 dark:bg-purple-500 rounded-full mr-3 shrink-0" />
+                      {feature.includes("maintenance") && (
+                        <Gift size={16} className="mr-2 shrink-0" />
+                      )}
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <button
+                  onClick={scrollToContact}
+                  className={`w-full px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 ${
+                    service.highlight
+                      ? "bg-purple-600 dark:bg-purple-500 text-white hover:bg-purple-700 dark:hover:bg-purple-600 hover:shadow-lg hover:shadow-purple-200 dark:hover:shadow-purple-900/50"
+                      : "bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-purple-600 dark:text-purple-400 hover:bg-zinc-200 dark:hover:bg-white/10"
                   }`}
                 >
-                  <div
-                    className={`text-2xl font-bold ${
-                      service.highlight
-                        ? "text-purple-600"
-                        : "text-purple-600 dark:text-purple-400"
+                  <Mail size={18} />
+                  Démarrer mon projet
+                </button>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12 items-stretch">
+            {/* Sélecteur de prestation */}
+            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-6 lg:p-8 shadow-sm">
+              <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-1">
+                Quel type de projet ?
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
+                Sélectionnez pour estimer un prix de départ
+              </p>
+
+              <div className="space-y-3">
+                {projectTypes.map((type) => (
+                  <label
+                    key={type.id}
+                    className={`flex items-center justify-between gap-3 rounded-lg border px-4 py-3 cursor-pointer transition-colors ${
+                      selectedType === type.id
+                        ? "border-purple-500 bg-purple-50 dark:bg-purple-900/20"
+                        : "border-zinc-200 dark:border-white/10 hover:border-purple-300 dark:hover:border-purple-700"
                     }`}
                   >
-                    {service.monthly.price}
-                  </div>
-                  <div className="text-sm text-zinc-600 dark:text-zinc-400 mt-0.5">
-                    {service.monthly.duration}
-                  </div>
-                  {service.monthly.after && (
-                    <div className="text-sm text-zinc-600 dark:text-zinc-400 flex items-center gap-1.5 mt-1">
-                      <CreditCard size={14} className="text-purple-500 shrink-0" />
-                      {service.monthly.after}
-                    </div>
-                  )}
-                  <div className="text-xs text-purple-600 dark:text-purple-400 font-medium mt-2 flex items-center gap-1">
-                    <Check size={12} className="shrink-0" />
-                    Propriétaire au dernier versement
-                  </div>
+                    <span className="flex items-center gap-3">
+                      <input
+                        type="radio"
+                        name="projectType"
+                        checked={selectedType === type.id}
+                        onChange={() => setSelectedType(type.id)}
+                        className="accent-purple-600"
+                      />
+                      <span className="text-sm text-zinc-900 dark:text-white">{type.label}</span>
+                    </span>
+                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400 whitespace-nowrap">
+                      À partir de {type.price}€
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Simulateur de mensualités */}
+            <div className="relative bg-white dark:bg-zinc-900 border border-purple-500 rounded-xl p-6 lg:p-8 shadow-xl">
+              <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 bg-purple-600 text-white mx-auto">
+                <Monitor size={28} />
+              </div>
+
+              <h3 className="text-xl font-semibold text-zinc-900 dark:text-white text-center mb-1">
+                {selectedProject.label}
+              </h3>
+              <p className="text-zinc-600 dark:text-zinc-400 text-center mb-8">
+                Choisissez votre durée de paiement
+              </p>
+
+              <input
+                type="range"
+                min={1}
+                max={12}
+                value={months}
+                onChange={(e) => setMonths(Number(e.target.value))}
+                className="w-full accent-purple-600"
+                aria-label="Nombre de mensualités"
+              />
+              <div className="flex justify-between text-xs text-zinc-500 dark:text-zinc-400 mb-8 mt-2">
+                <span>1 fois</span>
+                <span>12 mois</span>
+              </div>
+
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 whitespace-nowrap">
+                  {months === 1
+                    ? `À partir de ${selectedProject.price}€`
+                    : `À partir de ${Math.ceil(selectedProject.price / months)}€/mois`}
+                </div>
+                <div className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+                  {months === 1 ? "Paiement en 1 fois" : `sur ${months} mensualités`}
                 </div>
               </div>
 
-              <p className="text-zinc-600 dark:text-zinc-400 mb-6">{service.description}</p>
-
-              <ul className="space-y-2 mb-8">
-                {service.features.map((feature, featureIndex) => (
-                  <li
-                    key={featureIndex}
-                    className={`flex items-center ${
-                      feature.includes("maintenance")
-                        ? "font-medium text-purple-600 dark:text-purple-400"
-                        : "text-zinc-600 dark:text-zinc-400"
-                    }`}
-                  >
-                    <div className="w-1.5 h-1.5 bg-purple-400 dark:bg-purple-500 rounded-full mr-3 shrink-0" />
-                    {feature.includes("maintenance") && (
-                      <Gift size={16} className="mr-2 shrink-0" />
-                    )}
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <p className="flex items-center justify-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-500 mb-8">
+                <CreditCard size={14} className="text-purple-500 shrink-0" />
+                À partir de {selectedProject.price}€ au total, sans frais supplémentaires
+              </p>
 
               <button
                 onClick={scrollToContact}
-                className={`w-full px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 ${
-                  service.highlight
-                    ? "bg-purple-600 dark:bg-purple-500 text-white hover:bg-purple-700 dark:hover:bg-purple-600 hover:shadow-lg hover:shadow-purple-200 dark:hover:shadow-purple-900/50"
-                    : "bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-purple-600 dark:text-purple-400 hover:bg-zinc-200 dark:hover:bg-white/10"
-                }`}
+                className="w-full px-6 py-3 rounded-lg flex items-center justify-center gap-2 bg-purple-600 dark:bg-purple-500 text-white hover:bg-purple-700 dark:hover:bg-purple-600 hover:shadow-lg hover:shadow-purple-200 dark:hover:shadow-purple-900/50 transition-all duration-300"
               >
                 <Mail size={18} />
                 Démarrer mon projet
               </button>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
 
         {/* Encart comparatif — 2 points de comparaison, compacts */}
         <div className="max-w-3xl mx-auto mb-16">
