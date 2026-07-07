@@ -70,7 +70,7 @@ export function Footer() {
                   <Github size={20} />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/tommrcl.web/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
