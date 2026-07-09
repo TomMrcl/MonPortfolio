@@ -79,9 +79,9 @@ export function Contact() {
             {/* Formulaire */}
             <div className="relative">
               {submitStatus === "success" && (
-                <div className="absolute -top-12 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-full shadow-lg whitespace-nowrap">
-                  <CheckCircle2 size={20} />
-                  <span>Message envoyé avec succès !</span>
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-full shadow-lg text-sm sm:text-base w-max max-w-[calc(100vw-2rem)]">
+                  <CheckCircle2 size={18} className="shrink-0" />
+                  <span>Message envoyé !</span>
                 </div>
               )}
 

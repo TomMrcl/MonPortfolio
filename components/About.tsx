@@ -47,25 +47,24 @@ export function About() {
               <p className="text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
                 Titulaire d'un Titre RNCP Niveau 5 Développeur Web et Web
                 Mobile, je poursuivrai ma formation dès septembre avec un
-                RNCP Niveau 6 Développeur Java pour évoluer vers un profil
+                RNCP Niveau 6 pour évoluer vers un profil
                 full-stack complet. Je me concentre sur la création de sites
                 performants, accessibles et parfaitement adaptés aux besoins
-                de mes clients, avec une approche qui combine rigueur
-                technique et design élégant.
+                de mes clients.
               </p>
 
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-4 shadow-sm">
+              <div className="grid grid-cols-2 gap-3 sm:gap-6">
+                <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-3 sm:p-4 shadow-sm">
                   <div className="text-2xl text-purple-600 dark:text-purple-400 mb-2">
                     30+
                   </div>
-                  <div className="text-zinc-600 dark:text-zinc-400">Projets réalisés</div>
+                  <div className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">Projets réalisés</div>
                 </div>
-                <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-4 shadow-sm">
+                <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-3 sm:p-4 shadow-sm">
                   <div className="text-2xl text-purple-600 dark:text-purple-400 mb-2">
                     3+
                   </div>
-                  <div className="text-zinc-600 dark:text-zinc-400">
+                  <div className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
                     Années d'expérience
                   </div>
                 </div>

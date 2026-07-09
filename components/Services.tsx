@@ -8,11 +8,11 @@ import {
   Mail,
   Gift,
   CreditCard,
-  ShieldCheck,
-  Wrench,
   Star,
   CalendarDays,
   Wallet,
+  Wrench,
+  ShieldCheck,
 } from "lucide-react";
 
 type PaymentMode = "unique" | "monthly";
@@ -58,11 +58,7 @@ export function Services() {
       price: "À partir de 499€",
       description:
         "Site web professionnel pour présenter votre activité et attirer de nouveaux clients.",
-      features: [
-        "Design responsive",
-        "Optimisé SEO",
-        "Formulaire de contact",
-      ],
+      features: ["Design responsive", "Optimisé SEO", "Formulaire de contact"],
       highlight: true,
     },
     {
@@ -75,7 +71,6 @@ export function Services() {
         "Front-end React / Next.js",
         "Back-end & base de données SQL",
         "Espace client & authentification",
-
       ],
       highlight: false,
     },
@@ -84,7 +79,6 @@ export function Services() {
   return (
     <section id="services" className="py-20 scroll-mt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Titre */}
         <div className="mb-10 max-w-3xl">
           <p className="font-mono text-sm tracking-widest text-purple-600 dark:text-purple-400 mb-3">
@@ -106,11 +100,13 @@ export function Services() {
           </p>
 
           {/* Conteneur du toggle */}
-          <div className="relative inline-grid grid-cols-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-1 w-72 sm:w-80">
+          <div className="relative grid grid-cols-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl p-1 w-full max-w-[280px] sm:max-w-xs mx-auto">
             {/* Glissière de fond — se déplace selon le mode actif */}
             <div
               className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-lg bg-purple-600 shadow-lg transition-transform duration-300 ease-in-out ${
-                paymentMode === "monthly" ? "translate-x-[calc(100%+8px)]" : "translate-x-0"
+                paymentMode === "monthly"
+                  ? "translate-x-[calc(100%+8px)]"
+                  : "translate-x-0"
               }`}
             />
 
@@ -180,7 +176,9 @@ export function Services() {
                   <service.icon size={28} />
                 </div>
 
-                <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-2">{service.title}</h3>
+                <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-2">
+                  {service.title}
+                </h3>
 
                 <div className="mb-4">
                   <div
@@ -193,12 +191,17 @@ export function Services() {
                     {service.price}
                   </div>
                   <div className="text-sm text-zinc-600 dark:text-zinc-400 flex items-center gap-2 mt-1">
-                    <CreditCard size={14} className="text-purple-500 shrink-0" />
+                    <CreditCard
+                      size={14}
+                      className="text-purple-500 shrink-0"
+                    />
                     Acompte 30% à la signature, solde à la livraison
                   </div>
                 </div>
 
-                <p className="text-zinc-600 dark:text-zinc-400 mb-6">{service.description}</p>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-6">
+                  {service.description}
+                </p>
 
                 <ul className="space-y-2 mb-8">
                   {service.features.map((feature, featureIndex) => (
@@ -248,7 +251,7 @@ export function Services() {
                 {projectTypes.map((type) => (
                   <label
                     key={type.id}
-                    className={`flex items-center justify-between gap-3 rounded-lg border px-4 py-3 cursor-pointer transition-colors ${
+                    className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 rounded-lg border px-4 py-3 cursor-pointer transition-colors ${
                       selectedType === type.id
                         ? "border-purple-500 bg-purple-50 dark:bg-purple-900/20"
                         : "border-zinc-200 dark:border-white/10 hover:border-purple-300 dark:hover:border-purple-700"
@@ -260,11 +263,13 @@ export function Services() {
                         name="projectType"
                         checked={selectedType === type.id}
                         onChange={() => setSelectedType(type.id)}
-                        className="accent-purple-600"
+                        className="accent-purple-600 shrink-0"
                       />
-                      <span className="text-sm text-zinc-900 dark:text-white">{type.label}</span>
+                      <span className="text-sm text-zinc-900 dark:text-white">
+                        {type.label}
+                      </span>
                     </span>
-                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400 whitespace-nowrap">
+                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400 pl-7 sm:pl-0">
                       À partir de {type.price}€
                     </span>
                   </label>
@@ -300,19 +305,22 @@ export function Services() {
               </div>
 
               <div className="text-center mb-4">
-                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 whitespace-nowrap">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-purple-600 dark:text-purple-400 whitespace-nowrap">
                   {months === 1
                     ? `À partir de ${selectedProject.price}€`
                     : `À partir de ${Math.ceil(selectedProject.price / months)}€/mois`}
                 </div>
                 <div className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-                  {months === 1 ? "Paiement en 1 fois" : `sur ${months} mensualités`}
+                  {months === 1
+                    ? "Paiement en 1 fois"
+                    : `sur ${months} mensualités`}
                 </div>
               </div>
 
               <p className="flex items-center justify-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-500 mb-8">
-                <CreditCard size={14} className="text-purple-500 shrink-0" />
-                À partir de {selectedProject.price}€ au total, sans frais supplémentaires
+                <CreditCard size={14} className="text-purple-500 shrink-0" />À
+                partir de {selectedProject.price}€ au total, sans frais
+                supplémentaires
               </p>
 
               <button
@@ -326,31 +334,29 @@ export function Services() {
           </div>
         )}
 
-        {/* Carte Maintenance */}
+        {/* Carte Maintenance mensuelle */}
         <div className="max-w-3xl mx-auto">
-          <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border border-purple-300 dark:border-purple-700 rounded-xl p-8 text-center shadow-lg">
-            <div className="flex justify-center mb-4">
-              <div className="bg-purple-600 text-white w-16 h-16 rounded-lg flex items-center justify-center">
-                <Wrench size={28} />
-              </div>
+          <div className="bg-purple-50 dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/40 rounded-2xl p-8 lg:p-10 text-center shadow-sm">
+            <div className="w-16 h-16 rounded-xl bg-purple-600 flex items-center justify-center mx-auto mb-6">
+              <Wrench size={28} className="text-white" />
             </div>
-            <h3 className="text-2xl font-semibold text-zinc-900 dark:text-white mb-2">
+
+            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-1">
               Maintenance mensuelle
             </h3>
-            <p className="text-purple-600 dark:text-purple-400 text-xl font-bold mb-2">
+            <p className="text-purple-600 dark:text-purple-400 font-semibold mb-4">
               Adaptée à votre budget
             </p>
-            <p className="text-zinc-600 dark:text-zinc-400 mb-6">
-              Bénéficiez d&apos;une maintenance continue
-              pour garder votre site à jour et sécurisé.
-            </p>
-            <p className="flex items-center justify-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <ShieldCheck size={16} className="text-purple-500 shrink-0" />
-              Hébergement inclus · Support prioritaire · Corrections de bugs &amp; sécurité
-            </p>
+
+            <div className="flex items-center justify-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 flex-wrap mb-8">
+              <ShieldCheck size={16} className="text-purple-500 dark:text-purple-400 shrink-0" />
+              <span>
+                Hébergement inclus · Support prioritaire · Corrections de bugs
+                &amp; sécurité
+              </span>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );
