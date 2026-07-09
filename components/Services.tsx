@@ -21,8 +21,8 @@ type PaymentMode = "unique" | "monthly";
 const projectTypes = [
   { id: "landing", label: "Landing page (1 page)", price: 499 },
   { id: "vitrine5", label: "Site vitrine (jusqu'à 5 pages)", price: 799 },
-  { id: "vitrine10", label: "Site vitrine (jusqu'à 10 pages)", price: 1499 },
-  { id: "ecommerce", label: "E-commerce / boutique en ligne", price: 1999 },
+  { id: "vitrine10", label: "Site vitrine (jusqu'à 10 pages)", price: 1199 },
+  { id: "ecommerce", label: "E-commerce / boutique en ligne", price: 1499 },
 ];
 
 export function Services() {

@@ -45,11 +45,13 @@ export function About() {
               </p>
 
               <p className="text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
-                Avec plusieurs années d'expérience dans le développement web, je
-                me concentre sur la création de sites performants, accessibles
-                et parfaitement adaptés aux besoins de mes clients. Mon approche
-                combine technique moderne et design élégant pour des résultats
-                qui marquent.
+                Titulaire d'un Titre RNCP Niveau 5 Développeur Web et Web
+                Mobile, je poursuivrai ma formation dès septembre avec un
+                RNCP Niveau 6 Développeur Java pour évoluer vers un profil
+                full-stack complet. Je me concentre sur la création de sites
+                performants, accessibles et parfaitement adaptés aux besoins
+                de mes clients, avec une approche qui combine rigueur
+                technique et design élégant.
               </p>
 
               <div className="grid grid-cols-2 gap-6">
